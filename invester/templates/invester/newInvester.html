@@ -1,0 +1,972 @@
+{% extends "invester/base.html" %}
+{% load staticfiles %}
+{% block title %} Aviral::New Invester {% endblock %}
+{% block invester_content %}
+<div class="layout-content">
+	<div class="layout-content-body">
+
+		<div class="text-center m-b">
+			<h3 class="m-b-0">Invester Register Form</h3>
+			<small>This the area of Invester register, this form is divided into three parts. Persional information, Nomnee information and Bank information.</small>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="demo-form-wrapper">
+					<form id="demo-form-wizard-2" data-toggle="validator" method="post">{% csrf_token %}
+						<ul class="steps">
+							<li class="step col-xs-4 active">
+								<a class="step-segment" href="#step-1" data-toggle="tab">
+									<span class="step-icon icon icon-user"></span>
+								</a>
+								<div class="step-content">
+									<strong class="hidden-xs">Invester Information</strong>
+								</div>
+							</li>
+
+							<li class="step col-xs-4">
+								<a class="step-segment" href="#step-2" data-toggle="tab">
+									<span class="step-icon icon icon-cubes"></span>
+								</a>
+								<div class="step-content">
+									<strong class="hidden-xs">Co-invester/Nominee</strong>
+								</div>
+							</li>
+
+							<li class="step col-xs-4">
+								<a class="step-segment" href="#step-3" data-toggle="tab">
+									<span class="step-icon icon icon-credit-card"></span>
+								</a>
+								<div class="step-content">
+									<strong class="hidden-xs">Bank Information</strong>
+								</div>
+							</li>
+						</ul>
+						<div class="row gutter-xs">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="tab-content">
+											<div id="step-1" class="tab-pane active">
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">PERSIONAL INFORMATION</label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="investerName" class="control-label">Invester Name</label>
+															<input id="investerName" class="form-control" type="text" name="investerName" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter your Full Name.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="fatherName" class="control-label">Father Name</label>
+															<input id="fatherName" class="form-control" type="text" name="fatherName" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter your Father's Full Name.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="dateOfBirth" class="control-label">Date of Birth</label>
+															<div class="input-with-icon">
+																<input class="form-control" name="dob" type="text" data-provide="datepicker" data-date-clear-btn="true" data-rule-required="true" data-rule-date="true" data-msg-required="Please enter your Date of Birth.">
+																<span class="icon icon-calendar input-icon"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="branchCode" class="control-label">Branch Code</label>
+															<select class="custom-select form-control" id="branchCode" name="branchCode" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please Select Branch-code.">
+																<option value="" selected="">-- Branch-Code --</option>
+																<option value="GZP01"> GZP01 </option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="idProof" class="control-label">ID/Address Proof Type</label>
+															<select class="custom-select form-control" id="idProof" name="idProof" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Address Proof type.">
+																<option value="" selected=""> -Select One- </option>
+																<option value="Voter Id Card">Voter Id Card</option>
+																<option value="Aadhar Card">Aadhar Card</option>
+																<option value="Driving Licence">Driving Licence</option>
+																<option value="Passport">Passport</option>
+																<option value="PAN Card">PAN Card</option>
+																<option value="Bank Passbook">Bank Passbook</option>
+																<option value="Student Id Card">Student Id Card</option>
+																<option value="Ration Card">Ration Card</option>
+																<option value="Other">Other</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="idProofNo" class="control-label">ID Proof Number</label>
+															<input id="idProofNo" class="form-control" type="text" name="idProofNo" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter ID Proof Number." />
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="bpid" class="control-label">Introducer BP ID</label>
+															<input id="bpid" class="form-control" type="text" name="bpid" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter Introducer BP ID." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="bplevel" class="control-label">BP LEVEL</label>
+															<input id="bplevel" class="form-control" type="text" name="bplevel" spellcheck="false" autocomplete="off" disabled="disabled" />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="investoption" class="control-label">Invester Option</label>
+															<select class="custom-select form-control" id="investoption" name="investoption" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Invester Option.">
+																<option value="">-Select One-</option>
+																<option value="OTIP">OTIP</option>
+																<option value="OTIVIP">OTI - VIP</option>
+																<option value="VIP">VIP</option>
+															</select>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="invstplaname" class="control-label">Incentive Plan Name</label>
+															<select class="custom-select form-control" id="invstplaname" name="invstplaname" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Incentive Plan Name.">
+																<option value="">-Select One-</option>
+																<option value="OTSC" id="b_plan1">
+																	One Time Super Commision
+																</option>
+																<option value="VPC" id="b_plan2">
+																	Variable Power Commission
+																</option>
+																<option value="VIC I" id="b_plan3">
+																	Variable Investment Commission-I
+																</option>
+																<option value="VIC II" id="b_plan4">
+																	Variable Investment Commission-II
+																</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="investment" class="control-label">Investment</label>
+															<input id="investment" class="form-control" type="text" name="investment" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter ID Proof Number." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="investperiod" class="control-label">Investment Period</label>
+															<select class="custom-select form-control" id="investperiod" name="investperiod" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Investment Period.">
+																<option value="">-Select One-</option>
+																<option value="1">1 Year</option>
+																<option value="2">2 Year</option>
+																<option value="3">3 Year</option>
+															</select>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="paymode" class="control-label">Payment Mode</label>
+															<select class="custom-select form-control" id="paymode" name="paymode" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Payment Mode.">
+																<option value="">-Select One-</option>
+																<option value="Cash">Cash</option>
+																<option value="Cheque">Cheque</option>
+																<option value="Dimand Draft">Dimand Draft</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="checkno" class="control-label">IChechk/DD Number</label>
+															<input id="checkno" class="form-control" type="text" name="checkno" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter IChechk/DD Number." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="installmentmode" class="control-label">Installment Mode</label>
+															<select class="custom-select form-control" id="installmentmode" name="installmentmode" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select AInstallment Mode.">
+																<option value="">-Select One-</option>
+																<option value="Monthly">Monthly</option>
+																<option value="Quarterly">Quarterly</option>
+																<option value="Half Yearly">Half Yearly</option>
+																<option value="Yearly">Yearly</option>
+															</select>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="pan" class="control-label">PAN Card No</label>
+															<input id="pan" class="form-control" type="text" name="pan" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter PAN Card Number." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="occupation" class="control-label">Occupation</label>
+															<select class="custom-select form-control" id="occupation" name="occupation" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Occupation.">
+																<option value="">-Select One-</option>
+																<option value="Job">Job</option>
+																<option value="Student">Student</option>
+																<option value="Bussiness">Bussiness</option>
+																<option value="Farmer">Farmer</option>
+																<option value="Other">Other</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="occuspecify" class="control-label">Please Specify </label>
+															<input id="occuspecify" class="form-control" type="text" name="occuspecify" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please Specify your occupation." />
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">
+																	CURRENT ADDRESS INFORMATION
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="aad1" class="control-label">Address Line 1</label>
+															<input id="aad1" class="form-control" type="text" name="aad1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter address line 1" />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="add2" class="control-label">Address Line 2</label>
+															<input id="add2" class="form-control" type="text" name="add2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="add3" class="control-label">Address Line 3</label>
+															<input id="add3" class="form-control" type="text" name="add3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3. " />
+														</div>
+													</div>
+												</div>
+
+
+												<div class="row">
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="city" class="control-label">City</label>
+															<input id="city" class="form-control" type="text" name="city" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter your city name." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="state" class="control-label">State</label>
+															<select class="custom-select form-control" id="state" name="state" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select State.">
+																<option value="" selected>-- Select One --</option>
+										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+										                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+										                        <option value="Assam">Assam</option>
+										                        <option value="Bihar">Bihar</option>
+										                        <option value="Chandigarh">Chandigarh</option>
+										                        <option value="Chattisgarh">Chattisgarh</option>
+										                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+										                        <option value="Daman and Diu">Daman and Diu</option>
+										                        <option value="Delhi">Delhi</option>
+										                        <option value="Goa">Goa</option>
+										                        <option value="Gujarat">Gujarat</option>
+										                        <option value="Haryana">Haryana</option>
+										                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+										                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+										                        <option value="Jharkhand">Jharkhand</option>
+										                        <option value="Karnataka">Karnataka</option>
+										                        <option value="Kerala">Kerala</option>
+										                        <option value="Lakshadweep">Lakshadweep</option>
+										                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+										                        <option value="Maharashtra">Maharashtra</option>
+										                        <option value="Manipur">Manipur</option>
+										                        <option value="Meghalaya">Meghalaya</option>
+										                        <option value="Mizoram">Mizoram</option>
+										                        <option value="Nagaland">Nagaland</option>
+										                        <option value="Orissa">Orissa</option>
+										                        <option value="Pondicherry">Pondicherry</option>
+										                        <option value="Punjab">Punjab</option>
+										                        <option value="Rajasthan">Rajasthan</option>
+										                        <option value="Sikkim">Sikkim</option>
+										                        <option value="Tamil Nadu">Tamil Nadu</option>
+										                        <option value="Tripura">Tripura</option>
+										                        <option value="Uttarakhand">Uttarakhand</option>
+										                        <option value="Uttaranchal">Uttaranchal</option>
+										                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+										                        <option value="West Bengal">West Bengal</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="pin" class="control-label">Pin Code</label>
+															<input id="pin" class="form-control" type="text" name="pin" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter you pin-code." />
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">CORRESPONDENCE ADDRESS INFORMATION</label>
+																</label> { <input type="checkbox" value="same" id="chkadd" onClick="checkabove();" > Same as Current address } </label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cadd1" class="control-label">Address Line 1</label>
+															<input id="cadd1" class="form-control" type="text" name="cadd1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 1." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cadd2" class="control-label">Address Line 2</label>
+															<input id="cadd2" class="form-control" type="text" name="cadd2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cadd3" class="control-label">Address Line 3</label>
+															<input id="cadd3" class="form-control" type="text" name="cadd3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3." />
+														</div>
+													</div>
+												</div>
+
+
+												<div class="row">
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="ccity" class="control-label">City</label>
+															<input id="ccity" class="form-control" type="text" name="ccity" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter your  correspondace city name." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cstate" class="control-label">State</label>
+															<select class="custom-select form-control" id="cstate" name="cstate" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select your correspondace state.">
+																<option value="" selected>-- Select One --</option>
+										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+										                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+										                        <option value="Assam">Assam</option>
+										                        <option value="Bihar">Bihar</option>
+										                        <option value="Chandigarh">Chandigarh</option>
+										                        <option value="Chattisgarh">Chattisgarh</option>
+										                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+										                        <option value="Daman and Diu">Daman and Diu</option>
+										                        <option value="Delhi">Delhi</option>
+										                        <option value="Goa">Goa</option>
+										                        <option value="Gujarat">Gujarat</option>
+										                        <option value="Haryana">Haryana</option>
+										                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+										                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+										                        <option value="Jharkhand">Jharkhand</option>
+										                        <option value="Karnataka">Karnataka</option>
+										                        <option value="Kerala">Kerala</option>
+										                        <option value="Lakshadweep">Lakshadweep</option>
+										                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+										                        <option value="Maharashtra">Maharashtra</option>
+										                        <option value="Manipur">Manipur</option>
+										                        <option value="Meghalaya">Meghalaya</option>
+										                        <option value="Mizoram">Mizoram</option>
+										                        <option value="Nagaland">Nagaland</option>
+										                        <option value="Orissa">Orissa</option>
+										                        <option value="Pondicherry">Pondicherry</option>
+										                        <option value="Punjab">Punjab</option>
+										                        <option value="Rajasthan">Rajasthan</option>
+										                        <option value="Sikkim">Sikkim</option>
+										                        <option value="Tamil Nadu">Tamil Nadu</option>
+										                        <option value="Tripura">Tripura</option>
+										                        <option value="Uttarakhand">Uttarakhand</option>
+										                        <option value="Uttaranchal">Uttaranchal</option>
+										                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+										                        <option value="West Bengal">West Bengal</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cpin" class="control-label">Pin Code</label>
+															<input id="cpin" class="form-control" type="text" name="cpin" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter your correspondace postal code (pin-code)." />
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">CONTACT INFORMATION</label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="contactno" class="control-label">Contact No </label>
+															<input id="contactno" class="form-control" type="text" name="contactno" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter your contact number." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="email" class="control-label">E-Mail ID</label>
+															<input id="email" class="form-control" type="email" name="email" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email-id." />
+														</div>
+													</div>
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="marital" class="control-label">Marital Status</label>
+															<select class="custom-select form-control" id="marital" name="marital" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Marital Status.">
+																<option value="">-Select One-</option>
+																<option value="Unmaried">Unmaried</option>
+		                    									<option value="Maried">Maried</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row">
+													<div class="form-group col-sm-4 col-sm-offset-4">
+														<button class="btn btn-primary btn-block btn-next" type="button">Create an account</button>
+													</div>
+												</div>
+
+											</div>
+
+
+											<div id="step-2" class="tab-pane">
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coname" class="control-label">Name</label>
+															<input id="coname" class="form-control" type="text" name="coname" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Co-Invester Full Name.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="codob" class="control-label">Date of Birth</label>
+															<div class="input-with-icon">
+																<input name="codob" class="form-control" type="text" data-provide="datepicker" data-date-clear-btn="true" data-rule-required="true" data-rule-date="true" data-msg-required="Please enter Co-Invester Date of Birth.">
+																<span class="icon icon-calendar input-icon"></span>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coidProof" class="control-label">ID/Address Proof Type</label>
+															<select class="custom-select form-control" id="coidProof" name="coidProof" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Address Proof type.">
+																<option value="" selected=""> -Select One- </option>
+																<option value="Voter Id Card">Voter Id Card</option>
+																<option value="Aadhar Card">Aadhar Card</option>
+																<option value="Driving Licence">Driving Licence</option>
+																<option value="Passport">Passport</option>
+																<option value="PAN Card">PAN Card</option>
+																<option value="Bank Passbook">Bank Passbook</option>
+																<option value="Student Id Card">Student Id Card</option>
+																<option value="Ration Card">Ration Card</option>
+																<option value="Other">Other</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coidProofNo" class="control-label">ID Proof Number</label>
+															<input id="coidProofNo" class="form-control" type="text" name="coidProofNo" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter ID Proof Number.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="copan" class="control-label">PAN Number</label>
+															<input id="copan" class="form-control" type="text" name="copan" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter PAN Number.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="corelation" class="control-label">Relation with Invester</label>
+															<input id="corelation" class="form-control" type="text" name="corelation" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter relation with invester.">
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">
+																	CURRENT ADDRESS INFORMATION
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coadd1" class="control-label">Address Line 1</label>
+															<input id="coadd1" class="form-control" type="text" name="coadd1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 1." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coadd2" class="control-label">Address Line 2</label>
+															<input id="coadd2" class="form-control" type="text" name="coadd2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coadd3" class="control-label">Address Line 3</label>
+															<input id="coadd3" class="form-control" type="text" name="coadd3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3." />
+														</div>
+													</div>
+												</div>
+
+
+												<div class="row">
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cocity" class="control-label">City</label>
+															<input id="cocity" class="form-control" type="text" name="cocity" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter coinvester city." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="costate" class="control-label">State</label>
+															<select class="custom-select form-control" id="costate" name="costate" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select State.">
+																<option value="" selected>-- Select One --</option>
+										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+										                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+										                        <option value="Assam">Assam</option>
+										                        <option value="Bihar">Bihar</option>
+										                        <option value="Chandigarh">Chandigarh</option>
+										                        <option value="Chattisgarh">Chattisgarh</option>
+										                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+										                        <option value="Daman and Diu">Daman and Diu</option>
+										                        <option value="Delhi">Delhi</option>
+										                        <option value="Goa">Goa</option>
+										                        <option value="Gujarat">Gujarat</option>
+										                        <option value="Haryana">Haryana</option>
+										                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+										                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+										                        <option value="Jharkhand">Jharkhand</option>
+										                        <option value="Karnataka">Karnataka</option>
+										                        <option value="Kerala">Kerala</option>
+										                        <option value="Lakshadweep">Lakshadweep</option>
+										                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+										                        <option value="Maharashtra">Maharashtra</option>
+										                        <option value="Manipur">Manipur</option>
+										                        <option value="Meghalaya">Meghalaya</option>
+										                        <option value="Mizoram">Mizoram</option>
+										                        <option value="Nagaland">Nagaland</option>
+										                        <option value="Orissa">Orissa</option>
+										                        <option value="Pondicherry">Pondicherry</option>
+										                        <option value="Punjab">Punjab</option>
+										                        <option value="Rajasthan">Rajasthan</option>
+										                        <option value="Sikkim">Sikkim</option>
+										                        <option value="Tamil Nadu">Tamil Nadu</option>
+										                        <option value="Tripura">Tripura</option>
+										                        <option value="Uttarakhand">Uttarakhand</option>
+										                        <option value="Uttaranchal">Uttaranchal</option>
+										                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+										                        <option value="West Bengal">West Bengal</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="copin" class="control-label">Pin Code</label>
+															<input id="copin" class="form-control" type="text" name="copin" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter co-invester pin-code." />
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">CORRESPONDENCE ADDRESS INFORMATION</label>
+																</label> { <input type="checkbox" value="same" id="chkadd" onClick="checkabove();" > Same as Current address } </label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cocadd1" class="control-label">Address Line 1</label>
+															<input id="cocadd1" class="form-control" type="text" name="cocadd1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 1." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cocadd2" class="control-label">Address Line 2</label>
+															<input id="cocadd2" class="form-control" type="text" name="cocadd2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cocadd3" class="control-label">Address Line 3</label>
+															<input id="cocadd3" class="form-control" type="text" name="cocadd3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3." />
+														</div>
+													</div>
+												</div>
+
+
+												<div class="row">
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coccity" class="control-label">City</label>
+															<input id="coccity" class="form-control" type="text" name="coccity" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter City." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cocstate" class="control-label">State</label>
+															<select class="custom-select form-control" id="cocstate" name="cocstate" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select City.">
+																<option value="" selected>-- Select One --</option>
+										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+										                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+										                        <option value="Assam">Assam</option>
+										                        <option value="Bihar">Bihar</option>
+										                        <option value="Chandigarh">Chandigarh</option>
+										                        <option value="Chattisgarh">Chattisgarh</option>
+										                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+										                        <option value="Daman and Diu">Daman and Diu</option>
+										                        <option value="Delhi">Delhi</option>
+										                        <option value="Goa">Goa</option>
+										                        <option value="Gujarat">Gujarat</option>
+										                        <option value="Haryana">Haryana</option>
+										                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+										                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+										                        <option value="Jharkhand">Jharkhand</option>
+										                        <option value="Karnataka">Karnataka</option>
+										                        <option value="Kerala">Kerala</option>
+										                        <option value="Lakshadweep">Lakshadweep</option>
+										                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+										                        <option value="Maharashtra">Maharashtra</option>
+										                        <option value="Manipur">Manipur</option>
+										                        <option value="Meghalaya">Meghalaya</option>
+										                        <option value="Mizoram">Mizoram</option>
+										                        <option value="Nagaland">Nagaland</option>
+										                        <option value="Orissa">Orissa</option>
+										                        <option value="Pondicherry">Pondicherry</option>
+										                        <option value="Punjab">Punjab</option>
+										                        <option value="Rajasthan">Rajasthan</option>
+										                        <option value="Sikkim">Sikkim</option>
+										                        <option value="Tamil Nadu">Tamil Nadu</option>
+										                        <option value="Tripura">Tripura</option>
+										                        <option value="Uttarakhand">Uttarakhand</option>
+										                        <option value="Uttaranchal">Uttaranchal</option>
+										                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+										                        <option value="West Bengal">West Bengal</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cocpin" class="control-label">Pin Code</label>
+															<input id="cocpin" class="form-control" type="text" name="cocpin" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter pin." />
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">CONTACT INFORMATION</label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="cocontact" class="control-label">Contact No </label>
+															<input id="cocontact" class="form-control" type="text" name="cocontact" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Contact Number." />
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="coemail" class="control-label">E-Mail ID</label>
+															<input id="coemail" class="form-control" type="email" name="coemail" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter E-Mail ID." />
+														</div>
+													</div>
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="comarital" class="control-label">Marital Status</label>
+															<select class="custom-select form-control" id="comarital" name="comarital" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Marital Status.">
+																<option value="">-Select One-</option>
+																<option value="Unmaried">Unmaried</option>
+		                    									<option value="Maried">Maried</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row">
+													<div class="form-group col-sm-4 col-sm-offset-4">
+														<button class="btn btn-primary btn-pill btn-next" type="button">Continue</button>
+													</div>
+												</div>
+
+											</div>
+
+
+											<div id="step-3" class="tab-pane">
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="bankname" class="control-label">Bank Name</label>
+															<input id="bankname" class="form-control" type="text" name="bankname" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Bank Name.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="branchaddress" class="control-label">Branch Address</label>
+															<input id="branchaddress" class="form-control" type="text" name="branchaddress" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="flase" data-msg-required="Please enter Branch Name.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="ifsc" class="control-label">IFSC Code</label>
+															<input id="ifsc" class="form-control" type="text" name="ifse" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter IFSC Code.">
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="acno" class="control-label">Account No.</label>
+															<input id="acno" class="form-control" type="text" name="acno" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter your Account No.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="actype" class="control-label">Account Type</label>
+															<select class="custom-select form-control" id="actype" name="actype" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select account type.">
+																<option value="">-Select One-</option>
+										                        <option value="Saving">Saving</option>
+										                        <option value="Current">Current</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="bankcity" class="control-label">City</label>
+															<input id="bankcity" class="form-control" type="text" name="bankcity" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter bank branch city.">
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="branchstate" class="control-label">State</label>
+															<select class="custom-select form-control" id="branchstate" name="branchstate" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Branch State.">
+																<option value="" selected>-- Select One --</option>
+										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+										                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+										                        <option value="Assam">Assam</option>
+										                        <option value="Bihar">Bihar</option>
+										                        <option value="Chandigarh">Chandigarh</option>
+										                        <option value="Chattisgarh">Chattisgarh</option>
+										                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+										                        <option value="Daman and Diu">Daman and Diu</option>
+										                        <option value="Delhi">Delhi</option>
+										                        <option value="Goa">Goa</option>
+										                        <option value="Gujarat">Gujarat</option>
+										                        <option value="Haryana">Haryana</option>
+										                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+										                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+										                        <option value="Jharkhand">Jharkhand</option>
+										                        <option value="Karnataka">Karnataka</option>
+										                        <option value="Kerala">Kerala</option>
+										                        <option value="Lakshadweep">Lakshadweep</option>
+										                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+										                        <option value="Maharashtra">Maharashtra</option>
+										                        <option value="Manipur">Manipur</option>
+										                        <option value="Meghalaya">Meghalaya</option>
+										                        <option value="Mizoram">Mizoram</option>
+										                        <option value="Nagaland">Nagaland</option>
+										                        <option value="Orissa">Orissa</option>
+										                        <option value="Pondicherry">Pondicherry</option>
+										                        <option value="Punjab">Punjab</option>
+										                        <option value="Rajasthan">Rajasthan</option>
+										                        <option value="Sikkim">Sikkim</option>
+										                        <option value="Tamil Nadu">Tamil Nadu</option>
+										                        <option value="Tripura">Tripura</option>
+										                        <option value="Uttarakhand">Uttarakhand</option>
+										                        <option value="Uttaranchal">Uttaranchal</option>
+										                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+										                        <option value="West Bengal">West Bengal</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="bankpin" class="control-label">PIN Code</label>
+															<input id="bankpin" class="form-control" type="text" name="bankpin" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter your bank pin.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="entrydate" class="control-label">Entry Date</label>
+															<div class="input-with-icon">
+																<input class="form-control" name="entrydate" type="text" data-provide="datepicker" data-date-clear-btn="true" data-rule-required="true" data-rule-date="true" data-msg-required="Please enter your Entry Date.">
+																<span class="icon icon-calendar input-icon"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="divider">
+															<div class="divider-content">
+																<label class="label label-success">LOGIN INFO</label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="username" class="control-label">Choose Usename</label>
+															<input id="username" class="form-control" type="text" name="username" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please create username for this invester.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="password" class="control-label">Password</label>
+															<input id="password" class="form-control" type="password" name="password" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please create password.">
+														</div>
+													</div>
+
+													<div class="col-sm-4">
+														<div class="form-group">
+															<label for="re-password" class="control-label">Confirm Password</label>
+															<input id="re-password" class="form-control" type="password" name="repassword" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please create password.">
+														</div>
+													</div>
+												</div>
+
+
+
+												<div class="row">
+													<div class="form-group col-sm-4 col-sm-offset-4">
+														<p><small>By clicking Submit, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Policy</a>.</small></p>
+														<button class="btn btn-primary btn-block" type="submit">Submit</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

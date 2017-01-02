@@ -1,0 +1,82 @@
+      <div class="layout-sidebar">
+        <div class="layout-sidebar-backdrop"></div>
+        <div class="layout-sidebar-body">
+          <div class="custom-scrollbar">
+            <nav id="sidenav" class="sidenav-collapse collapse">
+              <ul class="sidenav">
+                <li class="sidenav-search hidden-md hidden-lg">
+                  <form class="sidenav-form" action="#">
+                    <div class="form-group form-group-sm">
+                      <div class="input-with-icon">
+                        <input class="form-control" type="text" placeholder="Search…">
+                        <span class="icon icon-search input-icon"></span>
+                      </div>
+                    </div>
+                  </form>
+                </li>
+                <li class="sidenav-heading">Navigation</li>
+                <li class="sidenav-item">
+                  <a href='dashboard/ajaxDashboard' aria-haspopup="true">
+                    <span class="sidenav-icon icon icon-home"></span>
+                    <span class="sidenav-label">Dashboards</span>
+                  </a>
+                </li>
+                <li class="sidenav-heading">Investor</li>
+                <li class="sidenav-item has-subnav">
+                  <a href="#" aria-haspopup="true">
+                    <span class="sidenav-icon icon icon-briefcase"></span>
+                    <span class="sidenav-label">Investor Info</span>
+                  </a>
+                  <ul class="sidenav-subnav collapse">
+                    <li class="sidenav-subheading"></li>
+                    <li><a href='{% url "NewInvester" %}'>Add New</a></li>
+                    <li><a href='<?php echo base_url(); ?>invester/action/investerList'>Investor List</a></li>
+                    <li><a href='<?php echo base_url(); ?>invester/action/installment'>Capital Installment</a></li>
+                    <li><a href='<?php echo base_url(); ?>invester/action'>Installment</a></li>
+                  </ul>
+                </li>
+                <li class="sidenav-item has-subnav active">
+                  <a href="#" aria-haspopup="true">
+                    <span class="sidenav-icon icon icon-edit"></span>
+                    <span class="sidenav-label">Business Partner</span>
+                  </a>
+                  <ul class="sidenav-subnav collapse">
+                    <li><a href="javascript:void(0);">All BP</a></li>
+                    <li><a href="javascript:void(0);">Plan Detail</a></li>
+                    <li><a href="javascript:void(0);">Add New</a></li>
+                    <li><a href="javascript:void(0);">Payment Detail</a></li>
+                    <li class="active"><a href="javascript:void(0);">Incentive</a></li>
+                    <li><a href="javascript:void(0);">Down Line</a></li>
+                    <li><a href="javascript:void(0);">Joining</a></li>
+                    <li><a href="javascript:void(0);">Promotion</a></li>
+                  </ul>
+                </li>
+                <li class="sidenav-item has-subnav">
+                  <a href="#" aria-haspopup="true">
+                    <span class="sidenav-icon icon icon-list"></span>
+                    <span class="sidenav-label">Administrator</span>
+                  </a>
+                  <ul class="sidenav-subnav collapse">
+                    <li><a href="javascript:void(0);">Report</a></li>
+                    <li><a href="javascript:void(0);">New Employee</a></li>
+                    <li><a href="javascript:void(0);">Close Incentieve</a></li>
+                    <li><a href="javascript:void(0);">Print Certificate</a></li>
+                    <li><a href="javascript:void(0);">Installment Remider</a></li>
+                    <li><a href="javascript:void(0);">Mobile Message</a></li>
+                  </ul>
+                </li>
+                <li class="sidenav-item has-subnav">
+                  <a href="#" aria-haspopup="true">
+                    <span class="sidenav-icon icon icon-map-marker"></span>
+                    <span class="sidenav-label">Accouting</span>
+                  </a>
+                  <ul class="sidenav-subnav collapse">
+                    <li><a href="javascript:void(0);">Daybook</a></li>
+                    <li><a href="javascript:void(0);">Expances</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
