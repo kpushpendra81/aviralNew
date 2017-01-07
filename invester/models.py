@@ -58,7 +58,7 @@ class coInvesterDetails(models.Model):
 
 	coInvesterId 			= 	models.AutoField(primary_key=True)
 	name 					= 	models.CharField(max_length=255, null=True)
-	dob 					= 	models.CharField(max_length=256, null=True)
+	dob 					= 	models.DateTimeField(auto_now_add=True, auto_now=False)
 	idProof 				= 	models.CharField(max_length=255, null=True)
 	idProofNo 				= 	models.CharField(max_length=255, null=True)
 	pan 					= 	models.CharField(max_length=255, null=True)
@@ -89,20 +89,22 @@ class coInvesterDetails(models.Model):
 class investerBankDetail(models.Model):
 
 	investerBankId 		= 	models.AutoField(primary_key=True)
-	accountNo 			= 	models.CharField(max_length=255, null=True)
-	accountName 		= 	models.CharField(max_length=255, null=True)
-	ifscCode 			= 	models.CharField(max_length=255, null=True)
+	payeeName 			= 	models.CharField(max_length=255, null=True)
 	bankName 			= 	models.CharField(max_length=255, null=True)
-	branchDetail 		= 	models.CharField(max_length=255, null=True)
+	accountNumber 		= 	models.CharField(max_length=255, null=True)
+	ifsc 				= 	models.CharField(max_length=255, null=True)
 	accountType 		= 	models.CharField(max_length=20, choices=accountChoices)
-	cancelCheque 		= 	models.CharField(max_length=255, null=True)
+	branchAddress 		= 	models.CharField(max_length=255, null=True)
+	bankCity 			= 	models.CharField(max_length=255, null=True)
+	branchState 		= 	models.CharField(max_length=255, null=True)
+	bankPin 			= 	models.CharField(max_length=255, null=True)
 	createdAt 			= 	models.DateTimeField(auto_now_add=True, auto_now=False)
 	updatedAt 			= 	models.DateTimeField(auto_now_add=False, auto_now=True)
 	invester 			= 	models.ForeignKey(investerDetails, to_field='investerId', on_delete=models.CASCADE, null=True)
 
 	def __unicode__(self):
 
-		return self.accountName
+		return self.accountNo
 
 class investerPlanDetail(models.Model):
 

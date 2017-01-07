@@ -114,7 +114,7 @@
 																<label class="label label-success">
 																	CURRENT ADDRESS INFORMATION
 																</label>
-																</label> { <input type="checkbox" value="{{investerId}}" id="chkadd" onClick="checkabove();" > Same as Invester address } </label>
+																</label> { <input type="checkbox" value="{{investerId}}" id="copyInvesterAddress"> Same as Invester address } </label>
 															</div>
 														</div>
 													</div>
@@ -123,22 +123,22 @@
 												<div class="row">
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="coadd1" class="control-label">Address Line 1</label>
-															<input id="coadd1" class="form-control" type="text" name="coadd1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 1." />
+															<label for="address1" class="control-label">Address Line 1</label>
+															<input id="address1" class="form-control" type="text" name="address1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 1." />
 														</div>
 													</div>
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="coadd2" class="control-label">Address Line 2</label>
-															<input id="coadd2" class="form-control" type="text" name="coadd2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
+															<label for="address2" class="control-label">Address Line 2</label>
+															<input id="address2" class="form-control" type="text" name="address2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
 														</div>
 													</div>
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="coadd3" class="control-label">Address Line 3</label>
-															<input id="coadd3" class="form-control" type="text" name="coadd3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3." />
+															<label for="address3" class="control-label">Address Line 3</label>
+															<input id="address3" class="form-control" type="text" name="address3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3." />
 														</div>
 													</div>
 												</div>
@@ -148,15 +148,15 @@
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="cocity" class="control-label">City</label>
-															<input id="cocity" class="form-control" type="text" name="cocity" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter coinvester city." />
+															<label for="city" class="control-label">City</label>
+															<input id="city" class="form-control" type="text" name="city" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter coinvester city." />
 														</div>
 													</div>
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="costate" class="control-label">State</label>
-															<select class="custom-select form-control" id="costate" name="costate" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select State.">
+															<label for="state" class="control-label">State</label>
+															<select class="custom-select form-control" id="state" name="state" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select State.">
 																<option value="" selected>-- Select One --</option>
 										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -199,8 +199,8 @@
 													</div>
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="copin" class="control-label">Pin Code</label>
-															<input id="copin" class="form-control" type="text" name="copin" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter co-invester pin-code." />
+															<label for="pin" class="control-label">Pin Code</label>
+															<input id="pin" class="form-control" type="text" name="pin" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter co-invester pin-code." />
 														</div>
 													</div>
 
@@ -211,7 +211,7 @@
 														<div class="divider">
 															<div class="divider-content">
 																<label class="label label-success">CORRESPONDENCE ADDRESS INFORMATION</label>
-																</label> { <input type="checkbox" value="same" id="chkadd" onClick="checkabove();" > Same as Current address } </label>
+																</label> { <input type="checkbox" value="same" id="chkadd"> Same as Current address } </label>
 															</div>
 														</div>
 													</div>
@@ -220,22 +220,22 @@
 												<div class="row">
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="cocadd1" class="control-label">Address Line 1</label>
-															<input id="cocadd1" class="form-control" type="text" name="cocadd1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 1." />
+															<label for="correspondenceAddress1" class="control-label">Address Line 1</label>
+															<input id="correspondenceAddress1" class="form-control" type="text" name="correspondenceAddress1" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 1." />
 														</div>
 													</div>
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="cocadd2" class="control-label">Address Line 2</label>
-															<input id="cocadd2" class="form-control" type="text" name="cocadd2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
+															<label for="correspondenceAddress2" class="control-label">Address Line 2</label>
+															<input id="correspondenceAddress2" class="form-control" type="text" name="correspondenceAddress2" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 2." />
 														</div>
 													</div>
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="cocadd3" class="control-label">Address Line 3</label>
-															<input id="cocadd3" class="form-control" type="text" name="cocadd3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3." />
+															<label for="correspondenceAddress3" class="control-label">Address Line 3</label>
+															<input id="correspondenceAddress3" class="form-control" type="text" name="correspondenceAddress3" spellcheck="false" autocomplete="on" data-rule-required="false" data-rule-alphanumeric="false" data-msg-required="Please enter Address Line 3." />
 														</div>
 													</div>
 												</div>
@@ -245,15 +245,15 @@
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="coccity" class="control-label">City</label>
-															<input id="coccity" class="form-control" type="text" name="coccity" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter City." />
+															<label for="correspondenceCity" class="control-label">City</label>
+															<input id="correspondenceCity" class="form-control" type="text" name="correspondenceCity" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter City." />
 														</div>
 													</div>
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="cocstate" class="control-label">State</label>
-															<select class="custom-select form-control" id="cocstate" name="cocstate" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select City.">
+															<label for="correspondenceState" class="control-label">State</label>
+															<select class="custom-select form-control" id="correspondenceState" name="correspondenceState" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select City.">
 																<option value="" selected>-- Select One --</option>
 										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -296,8 +296,8 @@
 													</div>
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="cocpin" class="control-label">Pin Code</label>
-															<input id="cocpin" class="form-control" type="text" name="cocpin" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter pin." />
+															<label for="correspondencePin" class="control-label">Pin Code</label>
+															<input id="correspondencePin" class="form-control" type="text" name="correspondencePin" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter pin." />
 														</div>
 													</div>
 
@@ -317,21 +317,21 @@
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="cocontact" class="control-label">Contact No </label>
-															<input id="cocontact" class="form-control" type="text" name="cocontact" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Contact Number." />
+															<label for="contactno" class="control-label">Contact No </label>
+															<input id="contactno" class="form-control" type="text" name="contactno" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Contact Number." />
 														</div>
 													</div>
 
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="coemail" class="control-label">E-Mail ID</label>
-															<input id="coemail" class="form-control" type="email" name="coemail" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter E-Mail ID." />
+															<label for="email" class="control-label">E-Mail ID</label>
+															<input id="email" class="form-control" type="email" name="email" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter E-Mail ID." />
 														</div>
 													</div>
 													<div class="col-sm-4">
 														<div class="form-group">
-															<label for="comarital" class="control-label">Marital Status</label>
-															<select class="custom-select form-control" id="comarital" name="comarital" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Marital Status.">
+															<label for="marital" class="control-label">Marital Status</label>
+															<select class="custom-select form-control" id="marital" name="marital" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Marital Status.">
 																<option value="">-Select One-</option>
 																<option value="Unmaried">Unmaried</option>
 		                    									<option value="Maried">Maried</option>
@@ -358,4 +358,43 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		// This is ajax call if user select same as invester address.
+		$('#copyInvesterAddress').click(() => {
+
+			if( $("#copyInvesterAddress").is(':checked') ) {
+
+				let investerId = $("#copyInvesterAddress").val()
+
+				$.ajax({
+
+					type: "POST",
+					url: "{% url 'InvesterDetail' %}/{{investerId}}/",
+					dataType: "json",
+					async: true,
+					enctype: 'multipart/form-data',
+
+					data: {
+						csrfmiddlewaretoken: '{{ csrf_token }}',
+						investerId: investerId
+					},
+					
+					success: function (json){
+						if(json.is_success){
+							$('#address1').val(json.address1)
+							$('#address2').val(json.address2)
+							$('#address3').val(json.address3)
+							$('#city').val(json.city)
+							$('#state').val(json.state)
+							$('#pin').val(json.pin)
+						}
+						else{
+							alert('Somthing wrong with getting invester data.')
+						}
+					}
+				})
+			}
+		})
+	</script>
 {% endblock %}

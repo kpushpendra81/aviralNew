@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'school.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'aviralNew',
+        'NAME': 'newAviral',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1'
