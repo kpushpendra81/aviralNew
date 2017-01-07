@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'dashboard',
     'invester',
     'advisor',
-    'plans'
+    'plans',
+    'branch'
 ]
 
 MIDDLEWARE = [

@@ -22,17 +22,19 @@
 
       {% include "sideMenu.html" %}
 
+      <div class="layout-content">
       {% block site_content %}
 
       {% endblock %}
       
       {% include "footer.html" %}
-
+      </div>
     </div>
     <script src="{% static 'js/vendor.min.js' %}"></script>
     <script src="{% static 'js/elephant.min.js' %}"></script>
     <script src="{% static 'js/application.min.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/demo.min.js' %}"></script>  </body>
+    <script src="{% static 'js/custom.js' %}"></script>  </body>
   </body>
 </html>

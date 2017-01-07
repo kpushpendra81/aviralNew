@@ -43,16 +43,16 @@ def login(request):
 
 					else:
 						messages.error(request, "Incorrect username or password")
-						return render(request, 'home.html', {'email': email})
+						return render(request, 'login/home.html', {'username': username})
 
 				else:
 					messages.error(request, "Incorrect username/password or user not registerd.")
-					return render(request, 'home.html', {'email': email})
+					return render(request, 'login/home.html', {'username': username})
 
 			except Exception, e:
 				print e
 				messages.error(request, "Incorrect username or password")
-				return render(request, 'home.html', {'email': email})
+				return render(request, 'login/home.html', {'username': username})
 		else:
 			return render(request, "login/home.html")
 

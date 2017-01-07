@@ -30,7 +30,7 @@
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading"></li>
                     <li><a href='{% url "NewInvester" %}'>Add New</a></li>
-                    <li><a href='<?php echo base_url(); ?>invester/action/investerList'>Investor List</a></li>
+                    <li><a href='{% url "investerList" %}'>Investor List</a></li>
                     <li><a href='<?php echo base_url(); ?>invester/action/installment'>Capital Installment</a></li>
                     <li><a href='<?php echo base_url(); ?>invester/action'>Installment</a></li>
                   </ul>

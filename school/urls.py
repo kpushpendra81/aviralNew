@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^', include('dashboard.urls')),
     url(r'^', include('invester.urls')),
     url(r'^', include('login.urls')),
+    url(r'^', include('branch.urls')),
 ]

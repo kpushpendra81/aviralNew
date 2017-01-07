@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from advisor.models import advisorDetail
 from decimal import Decimal
 from plans.models import investerPlanDetail, advisorPlanDetail
+from branch.models import branchDetail
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 accountChoices = (
@@ -23,11 +24,11 @@ class investerDetails(models.Model):
 	investerName 			= 	models.CharField(max_length=256, null=True, default="")
 	fatherName 				= 	models.CharField(max_length=256, null=True, default="")
 	dateOfBirth 			= 	models.DateTimeField(auto_now_add=False, auto_now=True)
-	occupation 				= 	models.CharField(max_length=256, null=True, default="")
-	occupationSpecify 		= 	models.CharField(max_length=256, null=True, default="")
 	idProof 				= 	models.CharField(max_length=256, null=True, default="")
 	idProofNo 				= 	models.CharField(max_length=256, null=True, default="")
 	pan 					= 	models.CharField(max_length=256, null=True, default="")
+	occupation 				= 	models.CharField(max_length=256, null=True, default="")
+	occupationSpecify 		= 	models.CharField(max_length=256, null=True, default="")
 	address1 				= 	models.CharField(max_length=255, null=True, default="")
 	address2 				= 	models.CharField(max_length=255, null=True, default="")
 	address3 				= 	models.CharField(max_length=255, null=True, default="")
@@ -45,6 +46,7 @@ class investerDetails(models.Model):
 	marital					= 	models.CharField(max_length=255, null=True, default="")
 	createdAt				= 	models.DateTimeField(auto_now_add=True, auto_now=False)
 	updatedAt				= 	models.DateTimeField(auto_now_add=False, auto_now=True)
+	branch					= 	models.ForeignKey(branchDetail, to_field='branchID', on_delete=models.CASCADE, null=True)
 	user					= 	models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
 	def __unicode__(self):
