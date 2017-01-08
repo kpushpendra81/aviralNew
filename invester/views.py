@@ -156,10 +156,22 @@ def investerAgreement(request):
 
 
 def investerList(request):
-
+	investerArray = []
 	if request.method == 'POST':
 		print request.POST
 	else:
-		print 'Investr List'
+		invester = investerDetails.objects.all()
+		for inv in invester:
+			invData = {}
+			invData['investerId'] 	= 	inv.investerId
+			invData['investerName'] = 	inv.investerName
+			invData['fatherName'] 	= 	inv.fatherName
+			invData['address1']		= 	inv.address1
+			invData['address2'] 	= 	inv.address2
+			invData['address3']		= 	inv.address3
+			invData['city'] 		= 	inv.city
+			invData['contactno']	= 	inv.contactno
+			invData['userName']		=	inv.user
+			investerArray.append(invData)
 
-	return render(request, 'invester/investerList.html', {})
+	return render(request, 'invester/investerList.html', {'investerList':investerArray})
