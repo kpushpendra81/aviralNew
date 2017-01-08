@@ -5,191 +5,91 @@
 	<div class="layout-content-body">
 
 		<div class="text-center m-b">
-			<h3 class="m-b-0">Invester Register Form</h3>
+			<h3 class="m-b-0" style="text-transform: uppercase;">{{invester.investerName}}</h3>
 			<small>This the area of Invester register, this form is divided into three parts. Persional information, Nomnee information and Bank information.</small>
 		</div>
 		<div class="row">
-			<div class="col-lg-12">
-				<div class="demo-form-wrapper">
-					<form id="demo-form-wizard-2" data-toggle="validator" method="post">{% csrf_token %}
-						<ul class="steps">
-							<li class="step col-xs-4">
-								<a class="step-segment" href="#step-1" data-toggle="tab">
-									<span class="step-icon icon icon-user"></span>
-								</a>
-								<div class="step-content">
-									<strong class="hidden-xs">Invester Information</strong>
-								</div>
-							</li>
+			<div class="col-md-12">
+              <div class="panel m-b-lg">
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a href="#invester" data-toggle="tab">Invester Detail</a></li>
+					<li><a href="#co-invester" data-toggle="tab">Co-Invester Detail</a></li>
+					<li><a href="#bank-detail" data-toggle="tab">Bank Detail</a></li>
+				</ul>
+                <div class="tab-content">
+					<div class="tab-pane fade active in" id="invester">
+						<div class="col-md-12">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Campaign Name</th>
+										<th>Link Clicks</th>
+										<th>Reach</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Website traffic</td>
+										<td>11,706</td>
+										<td>58,530</td>
+										<td>
+										<span class="label label-outline-success">Active</span>
+										</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Remarketing</td>
+										<td>15,860</td>
+										<td>79,300</td>
+										<td>
+										<span class="label label-outline-success">Active</span>
+										</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Page Likes</td>
+										<td>11,688</td>
+										<td>58,440</td>
+										<td>
+										<span class="label label-outline-success">Active</span>
+										</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Email Signups</td>
+										<td>13,049</td>
+										<td>65,245</td>
+										<td>
+										<span class="label label-outline-info">Pending</span>
+										</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>Product catalog</td>
+										<td>18,884</td>
+										<td>94,423</td>
+										<td>
+										<span class="label label-outline-danger">Inactive</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 
-							<li class="step col-xs-4">
-								<a class="step-segment" href="#step-2" data-toggle="tab">
-									<span class="step-icon icon icon-cubes"></span>
-								</a>
-								<div class="step-content">
-									<strong class="hidden-xs">Co-invester/Nominee</strong>
-								</div>
-							</li>
-
-							<li class="step col-xs-4 active">
-								<a class="step-segment" href="#step-3" data-toggle="tab">
-									<span class="step-icon icon icon-credit-card"></span>
-								</a>
-								<div class="step-content">
-									<strong class="hidden-xs">Bank Information</strong>
-								</div>
-							</li>
-						</ul>
-						<div class="row gutter-xs">
-							<div class="col-md-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="tab-content">
-											<div id="step-3" class="tab-pane active">
-												<div class="row">
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="payeeName" class="control-label">Payee Name</label>
-															<input id="payeeName" class="form-control" type="text" name="payeeName" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Bank Name.">
-														</div>
-													</div>
-
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="bankName" class="control-label">Bank Name</label>
-															<input id="bankName" class="form-control" type="text" name="bankName" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter Bank Name.">
-														</div>
-													</div>
-
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="accountNumber" class="control-label">Account No.</label>
-															<input id="accountNumber" class="form-control" type="text" name="accountNumber" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter your Account No.">
-														</div>
-													</div>
-
-												</div>
-
-												<div class="row">
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="ifsc" class="control-label">IFSC Code</label>
-															<input id="ifsc" class="form-control" type="text" name="ifsc" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter IFSC Code.">
-														</div>
-													</div>
-													
-
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="accountType" class="control-label">Account Type</label>
-															<select class="custom-select form-control" id="accountType" name="accountType" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select account type.">
-																<option value="">-Select One-</option>
-										                        <option value="Saving">Saving</option>
-										                        <option value="Current">Current</option>
-															</select>
-														</div>
-													</div>
-
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="branchAddress" class="control-label">Branch Address</label>
-															<input id="branchAddress" class="form-control" type="text" name="branchAddress" spellcheck="false" autocomplete="on" data-rule-required="true" data-rule-alphanumeric="flase" data-msg-required="Please enter Branch Name.">
-														</div>
-													</div>
-
-												</div>
-
-												<div class="row">
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="bankCity" class="control-label">City</label>
-															<input id="bankCity" class="form-control" type="text" name="bankCity" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please enter bank branch city.">
-														</div>
-													</div>
-
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="branchState" class="control-label">State</label>
-															<select class="custom-select form-control" id="branchState" name="branchState" data-rule-required="true" data-rule-alphanumeric="false" data-msg-required="Please Select Branch State.">
-																<option value="" selected>-- Select One --</option>
-										                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-										                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-										                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-										                        <option value="Assam">Assam</option>
-										                        <option value="Bihar">Bihar</option>
-										                        <option value="Chandigarh">Chandigarh</option>
-										                        <option value="Chattisgarh">Chattisgarh</option>
-										                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-										                        <option value="Daman and Diu">Daman and Diu</option>
-										                        <option value="Delhi">Delhi</option>
-										                        <option value="Goa">Goa</option>
-										                        <option value="Gujarat">Gujarat</option>
-										                        <option value="Haryana">Haryana</option>
-										                        <option value="Himachal Pradesh">Himachal Pradesh</option>
-										                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-										                        <option value="Jharkhand">Jharkhand</option>
-										                        <option value="Karnataka">Karnataka</option>
-										                        <option value="Kerala">Kerala</option>
-										                        <option value="Lakshadweep">Lakshadweep</option>
-										                        <option value="Madhya Pradesh">Madhya Pradesh</option>
-										                        <option value="Maharashtra">Maharashtra</option>
-										                        <option value="Manipur">Manipur</option>
-										                        <option value="Meghalaya">Meghalaya</option>
-										                        <option value="Mizoram">Mizoram</option>
-										                        <option value="Nagaland">Nagaland</option>
-										                        <option value="Orissa">Orissa</option>
-										                        <option value="Pondicherry">Pondicherry</option>
-										                        <option value="Punjab">Punjab</option>
-										                        <option value="Rajasthan">Rajasthan</option>
-										                        <option value="Sikkim">Sikkim</option>
-										                        <option value="Tamil Nadu">Tamil Nadu</option>
-										                        <option value="Tripura">Tripura</option>
-										                        <option value="Uttarakhand">Uttarakhand</option>
-										                        <option value="Uttaranchal">Uttaranchal</option>
-										                        <option value="Uttar Pradesh">Uttar Pradesh</option>
-										                        <option value="West Bengal">West Bengal</option>
-															</select>
-														</div>
-													</div>
-
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="bankPin" class="control-label">PIN Code</label>
-															<input id="bankPin" class="form-control" type="text" name="bankPin" spellcheck="false" autocomplete="off" data-rule-required="true" data-rule-alphanumeric="true" data-msg-required="Please enter your bank pin.">
-														</div>
-													</div>
-
-												</div>
-												<div class="row">
-													<div class="col-sm-4">
-														<div class="form-group">
-															<label for="createdAt" class="control-label">Entry Date</label>
-															<div class="input-with-icon">
-																<input class="form-control" name="createdAt" type="text" data-provide="datepicker" data-date-clear-btn="true" data-rule-required="true" data-rule-date="true" data-msg-required="Please enter your Entry Date.">
-																<span class="icon icon-calendar input-icon"></span>
-															</div>
-														</div>
-													</div>
-													<div class="col-sm-4">
-														<div class="form-group">
-															<p><small>By clicking Submit, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Policy</a>.</small></p>
-														</div>
-													</div>
-													<div class="col-sm-4">
-														<div class="form-group">
-															<button class="btn btn-primary btn-block" type="submit">Finish Invester Registration</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
-				</form>
-			</div>
+					<div class="tab-pane fade" id="co-invester">
+					Co-Invester
+					</div>
+					<div class="tab-pane fade" id="bank-detail">
+					Bank Detail
+					</div>
+                </div>
+            </div>
+
 		</div>
 	</div>
+</div>
+</div>
 {% endblock %}

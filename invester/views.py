@@ -116,7 +116,10 @@ def investerDetail(request, investerId):
 		}
 		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	else:
-		return render(request, 'invester/investerDetail.html', {'investerId':investerId})
+		invester = investerDetails.objects.get(pk = investerId)
+		coInvester = coInvesterDetails.objects.get(invester = invester)
+		bankDetail = investerBankDetail.objects.get(invester = invester)
+		return render(request, 'invester/investerDetail.html', {'invester':invester,'coInvester':coInvester,'bankDetail':bankDetail})
 
 def investerBank(request, investerId):
 	if request.method == 'POST':
