@@ -370,7 +370,7 @@
 				$.ajax({
 
 					type: "POST",
-					url: "{% url 'InvesterDetail' %}/{{investerId}}/",
+					url: "{% url 'InvesterDetail' investerId %}",
 					dataType: "json",
 					async: true,
 					enctype: 'multipart/form-data',

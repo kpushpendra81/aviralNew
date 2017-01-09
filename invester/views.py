@@ -13,7 +13,7 @@ def newInvester(request):
 			userId = User.objects.latest('id')
 			userId = userId.id
 		except:
-			userId = 1
+			userId = 0
 
 		userId = str(data['branch']) + str(userId + 1000) 
 		user = User.objects.create_user(username = userId, password='123456')
